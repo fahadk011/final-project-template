@@ -518,3 +518,35 @@ footer ul li a {
         gap: 1rem;
     }
 }
+
+/* contact list */
+
+.contact-card {
+    min-height: 30px;
+    margin: 12px 16px;
+    padding: 12px 20px;
+    background-color:rgba(177, 12, 12, .77)
+}
+
+.contact-card > h4 {
+    margin-bottom: 16px;
+}
+
+.contact-card > a {
+    color: black;
+    background-color: beige;
+}
+
+.contact-card > p {
+    margin-top: 16px;
+}
+
+/* message */
+.message-error {
+    background-color:rgba(235, 26, 26, 0.322);
+    border-color: brown;
+    border-width: 2px;
+    border-style: solid;
+    min-height: 60px;
+    padding: 16px 24px;
+}
