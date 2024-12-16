@@ -9,32 +9,38 @@ class ContactController extends Controller {
 
     public function handle($path_fragment) {
         if ($this->isPostRequest()) {
+            // var_dump($_POST);
             $this->addContact($_POST);
-        }
-        else if ($this->isGetRequest()) {
+        }elseif ($this->isGetRequest()) {
+            // var_dump($path_fragment);
             $this->getContactList();
         }
     }
 
     public function addContact($data) {
+
+        header("Content-Type: application/json");
+        $response = array();
+
         $model = new ContactModel();
         $model->name = $data['name'];
         $model->email = $data['email'];
         $model->message = $data['message'];
+
         try {
             $entity = $model->save();
-            $this->returnJson(array(
-                "code" => 200,
-                "message" => "successful",
-                "data" => $entity,
-            ));
+            $response['status'] = 'success';
+            $response['message'] = 'Contact added successfully';
+            $response['data'] = $entity;
+        } catch (ModelException $e) {
+            $response['status'] = 'error';
+            $response['message'] = $e->getMessage();
         }
-        catch (ModelException $ex) {
-            $this->returnJson(array(
-                "code" => 500,
-                "message" => $ex->getMessage()
-            ));
-        }
+
+        // remove header and footer from the response
+        ob_clean();
+        echo json_encode($response);
+        exit();
     }
 
     public function getContactList() {

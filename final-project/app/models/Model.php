@@ -26,7 +26,7 @@ abstract class Model {
         }
         $driver = DBDRIVER;
         //$hostname = DBHOST;
-        $port = DBPORT;
+        // $port = DBPORT;
         $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
         try {
             $con = new PDO($string, DBUSER, DBPASS);

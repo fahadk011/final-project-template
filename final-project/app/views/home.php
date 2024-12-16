@@ -91,6 +91,8 @@
   <section class="contact" id="contact">
     <div class="input-box">
       <h2 class="section-title">Contact Me</h2>
+      <div id="success-message"></div>
+      <div id="error-message"></div>
       <form id="contact-form">
         <input id="contact-name" type="text" name="name" placeholder="Your Name" required>
         <input id="contact-email" type="email" name="email" placeholder="Your Email" required>
@@ -108,7 +110,6 @@
     </ul>
     <p class="copyright">© 2024 Fahad Khan. All Rights Reserved.</p>
   </footer>
-
   <script>
     $(document).ready(function(){
       $("#contact-form").on('submit',function(event){
@@ -120,20 +121,40 @@
         const data = {name, email, message};
 
         $.ajax({
-          url: "./contact", // The URL to send the request to
+          url: "./contact", // URL to send the request to
           type: "POST", // HTTP method: GET, POST, etc.
-          data: data, // Data to send to the server
+          data: data, // Data to send to the servere
+          dataType: "json", // Expected response data type
           success: function(response) {
-              // This function runs when the request succeeds
-              alert("Contact saved successfully. I will contact you soon.")
+              console.log(response);
+
+              if(response.status === 'success') {
+                  $("#contact-name").val("");
+                  $("#contact-email").val("");
+                  $("#contact-message").val("");
+
+                  $("#success-message").text(response.message);
+                  $("#error-message").text("");
+                  alert("Contact saved successfully. I will contact you soon.")
+              }else{
+                  $("#error-message").text(response.message);
+                  $("#success-message").text("");
+              }
+
+              setTimeout(function(){
+                  $("#success-message").text("");
+                  $("#error-message").text("");
+              }, 5000);
+
           },
           error: function(xhr, status, error) {
-              // This function runs if there's an error
-              console.error("Error:", error);
+              // This function runs when the request fails
+              console.error("XHR:", xhr);
+              console.error("Response Text:", xhr.responseText);
           }
       });
 
-      })
-    })
+      });
+    });
   </script>
 

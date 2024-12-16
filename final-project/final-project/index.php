@@ -4,7 +4,6 @@ require '../app/setup.php';
 use app\core\Router;
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
