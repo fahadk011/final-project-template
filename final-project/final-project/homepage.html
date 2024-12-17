@@ -53,6 +53,29 @@
     </div>
   </section>
 
+  <section id="info-section">
+    <h2 class="section-title">Current Weather and Time</h2>
+    <div class="info-box">
+      <!-- Weather Section -->
+      <div>
+        <i class="fa-solid fa-cloud-sun"></i> <!-- FontAwesome weather icon -->
+        <h3>Weather</h3>
+        <p id="weather">Loading weather...</p>
+      </div>
+      <!-- Time Section -->
+      <div>
+        <i class="fa-solid fa-clock"></i> <!-- FontAwesome clock icon -->
+        <h3>Local Time</h3>
+        <p id="time">Loading time...</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Include FontAwesome CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+ 
+    
+
   <!-- Experience Section -->
   <section class="experience" id="experience">
     <h2 class="section-title">Experience</h2>
@@ -118,6 +141,15 @@
     </div>
   </section>
 
+
+  <section class="skills" id="skills">
+    <h2 class="section-title">Skills Chart</h2>
+    <div class="chart-container">
+      <canvas id="skillsChart"></canvas>
+    </div>
+  </section>
+  
+
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="input-box">
@@ -142,6 +174,7 @@
     <p class="copyright">© 2024 Fahad Khan. All Rights Reserved.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/homepage.js"></script>
 </body>
 </html>

@@ -549,4 +549,89 @@ footer ul li a {
     border-style: solid;
     min-height: 60px;
     padding: 16px 24px;
+
+/*chart*/    
+.chart-container {
+  width: 90%;              /* Full width */
+  max-width: 1200px;       /* Optional maximum width */
+  margin: 0 auto;          /* Center the chart */
+  height: 800px;           /* Increase the height (change as needed) */
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+  display: block;          /* Ensure canvas fills container */
+  height: 100% !important; /* Override default canvas size */
+  width: 100%;
+}
+
+/* Weather & Time Section */
+#info-section {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #info-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #f8f9fa;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .info-box {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .info-box div {
+    background: #ffffff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 300px;
+  }
+  
+  .info-box div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .info-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #6a11cb;
+  }
+  
+  .info-box p {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  
+  /* Icons for Weather and Time */
+  .info-box i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2575fc;
+  }
+  
+  
+
+
+
 }
